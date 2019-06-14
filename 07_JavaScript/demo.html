@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>變數的宣告和生命週期</title>
+    <script>
+        // 1. 在這裡宣告一個變數 x 設定初始值 為 999
+        var x = 999;
+    </script>
+</head>
+
+<body>
+    <button onclick="getX()">XXX</button>
+    <button onclick="set()">設定</button>
+    <button onclick="get()">取得</button>
+    <script>
+        console.log(x);
+        function getX() {
+            var x = 1;
+            console.log(x);
+            console.log(window.x);
+        }
+    </script>
+    <script>
+        function set() {
+            y = 2;
+            console.log("設定Y" + y);
+            var z;
+            console.log("設定Z" + y);
+        }
+        function get() {
+            console.log("取得y" + y);
+            console.log("取得Z" + z);
+        }
+    </script>
+    <script>
+        // 11. 把底下的註解拿開，觀察結果
+        //     這是ES6在2015年定出來的新標準之一，請參考網路相關的補充資料
+        // var 與 ES6 let const 差異：https://ithelp.ithome.com.tw/articles/10209121
+        // [筆記] JavaScript ES6 中的模版字符串（template literals）和標籤模版（tagged template）：https://pjchender.blogspot.com/2017/01/javascript-es6-template-literalstagged.html
+        if (true) {
+            var testVar = "a"
+            let testLet = "b";
+            const testConst = "c";
+        }
+        console.log(`testVar: ${testVar}`);
+        console.log(`testLet: ${testLet}`);
+        console.log(`testConst: ${testConst}`);
+    </script>
+
+</body>
+
+</html>

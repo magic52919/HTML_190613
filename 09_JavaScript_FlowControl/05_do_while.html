@@ -20,9 +20,17 @@
     <p id="demo"></p>
 
     <script>
-        
+        function sum(){
+            var cul = 0;
         // 透過 prompt 讓使用者輸入金額
-        
+        do{
+            var result = prompt("價錢","");
+            var input = parseInt(result);
+            var cul = input +cul;
+
+        }while(result != 0);
+        document.getElementById("demo").innerHTML = cul;
+        }
         // 若輸入0表示不再輸入，進行畫面顯示結算金額
 
     </script>

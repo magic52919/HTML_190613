@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>FlowControl</title>
+  <meta charset="UTF-8">
+  <title>FlowControl</title>
 </head>
 
 <body>
-    <p><a href="https://www.w3schools.com/js/js_switch.asp" target="_blank">switch case</a></p>
-    <pre>
+  <p><a href="https://www.w3schools.com/js/js_switch.asp" target="_blank">switch case</a></p>
+  <pre>
         switch(expression) {
           case x:
             // code block
@@ -21,16 +21,41 @@
         }
    </pre>
 
-    <!-- 請設計一個介面，讓使用者輸入頻道代碼後，網頁可以顯示對應的頻道名稱 -->
+  <!-- 請設計一個介面，讓使用者輸入頻道代碼後，網頁可以顯示對應的頻道名稱 -->
+  請輸入代碼:
+  <input type="text" id="check">
+  <button onclick="query();">查詢</button>
+  <P id="demo">查詢結果</P>
+  <script>
+    function query() {
+      console.log("OK");
+      var a = document.getElementById("check").value;
+      console.log(a);
+      switch (a) {
+        case "20":
+          document.getElementById("demo").textContent = "TLC 旅遊生活頻道";
+          break;
+        case "65":
+          document.getElementById("demo").textContent = "HBO";
+          break;
+        case "66":
+          document.getElementById("demo").textContent = "東森洋片台";
+          break;
+        default:
+          //  document.getElementById("demo").textContent="頻道尚未建立";
+          break;
+      }
 
-    <script>
+
+
+    }
         // 透過switch case設定底下對應項目
         // 20 ==> TLC 旅遊生活頻道
         // 65 ==> HBO
         // 66 ==> 東森洋片台
         // 非上述 ==> 頻道尚未建立
 
-    </script>
+  </script>
 </body>
 
 </html>

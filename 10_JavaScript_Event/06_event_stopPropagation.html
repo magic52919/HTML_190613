@@ -12,7 +12,21 @@
     <!-- 2. 撰寫一個 <p>，點選後再 console.log 寫下一些訊息，且包住步驟一的 <button> -->
     <!-- 3. 撰寫一個 <div>，點選後再 console.log 寫下一些訊息，且包住步驟二的 <p> -->
     <!-- 4. 觀察 console.log 發生了什麼事情? -->
-  
+    <P onclick="pickClick()" style="background-color: red">
+  <button onclick="btnClick(event,'12')">按鈕在此</button>
+</P>
+
+  <script>
+      function pickClick(){
+        console.log("pickClick");
+      }
+      function btnClick(e,o){
+        console.log(e);
+        console.log(o);
+          console.log("btnClick");
+          e.stopPropagation();
+      }
+  </script>
 </body>
 
 </html>

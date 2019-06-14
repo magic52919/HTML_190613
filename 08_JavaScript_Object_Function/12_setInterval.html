@@ -11,21 +11,38 @@
     <p>指定的秒數，做指定的事情</p>
 
     <!-- 新增兩顆按鈕，分別對應 start() 和 stop()-->
-
+    <button onclick="start()">開始</button>
+    <button onclick="stop()">結束</button>
     <!-- 新增兩個標籤，一個用來顯示按鈕點後的系統時間，一個用來顯示秒數 -->
-
+    <h3 id="start"></h3>
+    <h3 id="time"></h3>
     <script>
-        // 這裡宣告兩個變數(因為需要跨function使用) flag & sec，把 sec 初始化為0 
 
+        // 這裡宣告兩個變數(因為需要跨function使用) flag & sec，把 sec 初始化為0 
+        var sec = 0;
+        var flag;
         // function start() 
         // setInterval() 會回傳一個數值(旗子)，關閉時會使用到
         // 新增一個日期物件，顯示系統當前時間
 
+        function start() {
+            var d = new Date();
+            document.getElementById("start").innerHTML = d.toLocaleDateString() + d.toLocaleTimeString();
+            var flag = setInterval(timer, 1000);
+        }
         //function timer()
-
+        function timer() {
+            sec += 1;
+            document.getElementById("time").innerHTML = sec;
+        }
         // 每一秒鐘更新一次畫面
-
-        // function stop() 
+        function stop() {
+            clearInterval(flag);
+            sec = 0;
+        }
+        // function stop()
         // 使用 clearInterval() 清除計數器
     </script>
-</body></html>
+</body>
+
+</html>

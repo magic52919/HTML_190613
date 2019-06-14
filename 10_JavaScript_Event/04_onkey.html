@@ -9,6 +9,29 @@
 <body>
     <!-- 輸出畫面請參考圖片 -->
     <!-- 會需要的關鍵字：onkeypress 事件、onkeydown事件、event.keyCode、event.charCode -->
+<h1>測試版定 <i>onkeypress</i> 事件:</h1>
+    
+<input type="text" onkeypress="testpress(event)">
+<p>這裡會顯示keyCode:<span id="keypress1"></span></p> 
+<p>這裡會顯示charcode:<span id="keypress2"></span></p>
+
+<hr>
+
+<h1>測試版定 <i>onkeydown</i> 事件:</h1>
+<input type="text" onkeydown="testdown(event)">
+<p>這裡會顯示keyCode:<span id="keypress3"></span></p>
+<p>這裡會顯示charcode:<span id="keypress4"></span></p>
+<script>
+    function testpress(obj){
+        document.getElementById("keypress1").innerHTML = obj.keyCode;
+        document.getElementById("keypress2").innerHTML = obj.charCode;
+    }
+    function testdown(obj){
+        document.getElementById("keypress3").innerHTML = obj.keyCode;
+        document.getElementById("keypress4").innerHTML = obj.charCode;
+    }
+</script>
 
 </body>
+
 </html>

@@ -23,13 +23,23 @@
 
 
         // 試試看，驗證密碼是否有包含至少一位大寫英文，在不知道 Regular Expressions 正規表示式以前，我們可以怎麼寫? 
+        // var passwd = '12345678';
+        // var flag = true;
+        // for (var i =0;i<passwd.length;i++){
+        //     var temp = passwd.substring(i,i+1);
+        //     console.log(temp);
+        //     if(temp != temp.toUpperCase()){
+        //         flag = false;
+        //         console.log(flag);
+        //     }
+        // }
 
 
         // 被「//」夾住的文字，是 正規表示法 的描述
         let patt = /rday/;
         let str = 'Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday';
         console.log(`test 會回傳 true/false值：${patt.test(str)}`);
-        
+
         // exec 方法會回傳一個陣列，透過console.log去查看有些什麼項目
         let obj = patt.exec(str);
         console.log(obj);
@@ -43,16 +53,26 @@
         obj = str.search(patt);
         console.log(obj);
         console.log(`search 會回傳位置，-1表示沒有，0 表示字串的第一個位置 ==> ${obj}`);
-          
+
 
         // 1. 驗證密碼是否有包含至少一位大寫英文
+        patt = /[A-Z]/;
+        var pass = "12323A"
+        console.log(`是否有包含至少一位大寫英文：${patt.test(pass)}`);
 
         // 2. 驗證輸入的文字是否有包含空白
+        patt = /\s/;
+        var name = "資策 會"
+        console.log(`${name}是否有包含空白：${patt.test(name)}`);
 
         // 3. 驗證身份證字號格式，第一碼是英文，後面是數字；例如：A123456789
-
+        patt = /^[a-zA-Z]\d{9}$/;
+        var number = "T1234567229";
+        console.log(`${number}是否有包含合格：${patt.test(number)}`);
         // 4. 驗證車牌號碼，假設以 - 分隔，-前會有2-3碼英文，-後會有3-4碼數字
-
+        patt = /^[a-zA-Z]{2,3}-\d{3,4}$/;
+        var carnum = "TaT-1333";
+        console.log(`${carnum}是否有包含車牌號碼合格：${patt.test(carnum)}`);
     </script>
 </body>
 
